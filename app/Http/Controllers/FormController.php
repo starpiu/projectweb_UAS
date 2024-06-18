@@ -21,6 +21,6 @@ class FormController extends Controller
         'Sekolah' => $request->sekolah,
      ];
      santri::create($data);
-     return 'sucsess';   
+     return view('beranda');   
     }
 }
