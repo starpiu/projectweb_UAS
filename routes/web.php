@@ -12,4 +12,6 @@ Route::get('/', function () {
 Route::get('/beranda',[BerandaController::class,'index']);
 Route::get('/beranda/form',[FormController::class,'create']);
 Route::post('/beranda',[FormController::class,'store']);
+
 Route::get('/login',[LoginController::class,'index']);
+Route::post('/login',[LoginController::class,'login']);

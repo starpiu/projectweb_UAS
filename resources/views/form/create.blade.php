@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- START FORM -->
-<form action='{{url('beranda')}}' method='post'>
+<form action='{{url('/beranda')}}' method='post'>
 @csrf
     <div>
         <div >
