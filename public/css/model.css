@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#538392 0%, #B3E2A7 100% );
+}
+
+h1,h5{
+    text-align: center;
+}
+.form{
+    color: aliceblue;
+    background: #3a7190;
+    width: 300px;
+}
