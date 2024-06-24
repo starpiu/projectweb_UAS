@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\santri;
+use App\Models\Santri;
 use Illuminate\Http\Request;
 
 class FormController extends Controller
@@ -15,12 +15,12 @@ class FormController extends Controller
     function store(Request $request)
     {
      $data = [
-        'Id_Yayasan' => $request->idyayasan,
-        'Nama' => $request->nama,
-        'Kamar' => $request->kamar,
-        'Sekolah' => $request->sekolah,
+        'id_yayasan' => $request->idyayasan,
+        'nama' => $request->nama,
+        'kamar' => $request->kamar,
+        'sekolah' => $request->sekolah,
      ];
-     santri::create($data);
+     Santri::create($data);
      return redirect('beranda') ;
     }
 }

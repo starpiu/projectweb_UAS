@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>Data Santri</h1>
+    <div>
+      <a href="/logout">Logout</a>   
+    </div>
     <!-- START DATA -->
 <div >
     <!-- FORM PENCARIAN -->
@@ -17,7 +20,9 @@
           <button type="submit">Cari</button>
       </form>
     </div>
+   
     <!-- TOMBOL TAMBAH DATA -->
+    
     <div>
       <a href='beranda/form'>+ Tambah Data</a>
     </div>
@@ -32,17 +37,24 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($data as $santri)
             <tr>
-                <td>1</td>
-                <td>2219</td>
-                <td>Ani</td>
-                <td>24</td>
-                <td>12 IBB</td>
+                <td>{{$santri->id}}</td>
+                <td>{{$santri->id_yayasan}}</td>
+                <td>{{$santri->nama}}</td>
+                <td>{{$santri->kamar}}</td>
+                <td>{{$santri->sekolah}}</td>
                 <td>
-                    <a href='' >Edit</a>
-                    <a href='' >Del</a>
+                    <a href='beranda/{{$santri->id}}/edit'>Edit</a>
+                    <form onsubmit="return confirm('yakinkah anda mau menghapus data ini?')" action="beranda/{{$santri->id}}/delete" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="sumbit" name="submit">Hapus</button>
+                    </form>
+                    {{-- <a href='beranda/{{$santri->id}}/delete'>Hapus</a> --}}
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

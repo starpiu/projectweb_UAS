@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Santri;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -11,21 +14,36 @@ class LoginController extends Controller
     {
         return view('login.login');
     }
-    function login(Request $request) //menerima parameter atau isi form pada function create
+    function awal()
     {
-        $request->validate([ //proses validasi data
+        return view('login.login');
+    }
+    function oke(Request $request)
+    {
+        $request->validate([
             'email' => ['required', 'string', 'email'],
             'password' => ['required', 'string'],
-        ], [
-            'email.required'=>'wajib diisi', //email dan pass ketika kosong maka muncul tulisan wajib diisi
-            'password.required'=>'wajib diisi'
         ]);
-        $infologin =[ //membuat variabel baru berupa infologin yang menyimpan data email dan pass
-            'email'=> $request-> email,
-            'password'=> $request-> password,
-        ];
-        if(Auth::attempt($infologin)){
-            return redirect('/beranda');
-        }//jika authentikasi sukses
+
+        if (! Auth::attempt($request->only('email', 'password'))) {
+            throw ValidationException::withMessages([
+                'email' => trans('auth.failed'),
+            ]);
+        }
+
+        $request->session()->regenerate();
+
+        $data = Santri::all();
+        return view('beranda',['data' => $data]);
+    }
+    function destroy(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('login');
     }
 }

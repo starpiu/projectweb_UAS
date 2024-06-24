@@ -18,14 +18,15 @@
     <h1>Login Form</h1> 
     <h5>silahkan isi form dibawah ini</h5>
     <form method="POST" action="/login"> 
+        @csrf
         <fieldset>
         <div>
             <label for="email">email :</label>
-            <input type="text" id="email" name="email" required>
+            <input type="text" id="email" name="email">
         </div>
         <div>
             <label for="password">password :</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password">
         </div>
         </fieldset>
         <div>

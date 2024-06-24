@@ -16,8 +16,8 @@ class TabelUserSeeder extends Seeder
     {
         DB::table('users')->insert([//memasukkan data pada tabel users di localhost
             'name'=> 'fiya',  //akan terisi pd kolom nama, email, pass
-            'email'=> 'fiya@gmail.com',
-            'password'=> Hash::make('123456') //harus melakukan hashing jika langsung dimasukkan pass nya pada kolom pass maka pass tidak akan aman
+            'email'=> 'tugas@gmail.com',
+            'password'=> Hash::make('654321') //harus melakukan hashing jika langsung dimasukkan pass nya pada kolom pass maka pass tidak akan aman
         ]);
         //function run ini dibuat untuk melakukan proses memsaukkan data
     }

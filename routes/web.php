@@ -9,9 +9,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/login',[LoginController::class,'index'])->name('login');
+
+// Route::middleware('guest')->group(function(){
+Route::get('/login',[LoginController::class,'awal'])->name('login');
+Route::post('/login',[LoginController::class,'oke']); //});
+Route::get('/logout', [LoginController::class, 'destroy'])->middleware('auth');
+
+// Route::prefix('/tasks')->middleware('auth')->group(function() {
 Route::get('/beranda',[BerandaController::class,'index']);
 Route::get('/beranda/form',[FormController::class,'create']);
 Route::post('/beranda',[FormController::class,'store']);
 
-Route::get('/login',[LoginController::class,'index']);
-Route::post('/login',[LoginController::class,'login']);
+Route::get('beranda/{santri}/edit', [BerandaController::class, 'edit']);
+Route::put('beranda/{santri}/edit', [BerandaController::class, 'update']);
+Route::delete('beranda/{santri}/delete', [BerandaController::class, 'destroy']); //});
