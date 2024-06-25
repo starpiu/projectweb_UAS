@@ -4,35 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santri.id</title>
-    <link href="\css\model.css" rel="stylesheet" >
+    <link href="\css\create&edit.css" rel="stylesheet" >
 </head>
 <body>
-    <h4>Ubah Data</h4>
-    <form method="POST" action="/beranda/{{$santri->id}}/edit">
+    
+    <form class="form" method="POST" action="/beranda/{{$santri->id}}/edit">
         {{-- {{ route('reservation.update', ['reservation' => $data->id]) }} --}}
         @csrf
         @method('put')
-        <div>
-            <label for="id">Id Yayasan</label>
-            <input type="number" name='idyayasan' id="idyayasan" value="{{$santri->id_yayasan}}">
+        <h2>Ubah Data</h2>
+        <div class="input-box">
+            <input type="number" name='idyayasan' id="idyayasan" value="{{$santri->id_yayasan}}" placeholder="Id Yayasan">
             {{-- <input id="title" name="title" value="{{ $task->title }}"> --}}
         </div>
-        <div>
-            <label for="nama">Nama</label>
-            <input type="text" name='nama' id="nama" value="{{$santri->nama}}">
+        <div class="input-box">
+            <input type="text" name='nama' id="nama" value="{{$santri->nama}}" placeholder="Nama">
             {{-- <label for="description">Deskripsi</label>
             <textarea id="description" name="description">{{ $task->description }}</textarea> --}}
         </div>
-        <div>
-            <label for="kamar">Kamar</label>
-            <input type="text" name='kamar' id="kamar" value="{{$santri->kamar}}">
+        <div class="input-box">
+            <input type="text" name='kamar' id="kamar" value="{{$santri->kamar}}" placeholder="Kamar">
         </div>
-        <div>
-            <label for="sekolah">Sekolah</label>
-            <input type="text" name='sekolah' id="sekolah" value="{{$santri->sekolah}}">
+        <div class="input-box">
+            <input type="text" name='sekolah' id="sekolah" value="{{$santri->sekolah}}" placeholder="Sekolah">
         </div>
-        <div>
-            <button type="submit">save changes</button>
+        <div class="tambah">
+            <button class="aksi-tambah" type="submit">save changes</button>
         </div>
     </form>
 </body>

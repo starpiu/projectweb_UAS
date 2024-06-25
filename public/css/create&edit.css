@@ -12,22 +12,8 @@ body{
     min-height: 100vh;
     background: linear-gradient(#538392 0%, #B3E2A7 100% );
 }
-
-h1,h5{
+h2{
     text-align: center;
-}
-.form{
-    color: aliceblue;
-    width: 400px;
-    background:#80B9AD;
-    border-radius: 15px;
-    padding: 50px 50px;
-}
-.form .input-box{
-    position: relative;
-    width: 100%;
-    height: 40px;
-    margin: 30px 0;
 }
 .input-box input{
     width: 100%;
@@ -41,27 +27,34 @@ h1,h5{
     color:aliceblue;
     padding: 20px 45px 20px 20px;
 }
-
-.input-box input::placeholder{
+.form{
+    color: aliceblue;
+    width: 400px;
+    background:#80b9ad85;
+    border-radius: 15px;
+    padding: 50px 50px;
+}
+.form .input-box{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin: 30px 0;
+}
+::placeholder{
     color: aliceblue;
 }
-.input-box i{
-    position:absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-}
-.form .submit{
-    width: 100%;
-    height: 35px;
-    background-color: aliceblue;
+.aksi-tambah{
+    background-color: #6295A2 ;
+    color:aliceblue;
     border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 5px #4e7581;
+    padding: 3px 5px;
     cursor: pointer;
-    font-size: 16px;
-    color: #4e7581;
-    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+}
+.tambah{
+    text-align: center;
 }

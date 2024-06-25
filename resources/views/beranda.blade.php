@@ -5,36 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>santri.id</title>
-    <link href="\css\model.css" rel="stylesheet" >
+   <link href="\css\beranda.css" rel="stylesheet" >
+    
 </head>
 <body>
-    <h1>Data Santri</h1>
-    <div>
-      <a href="/logout">Logout</a>   
-    </div>
+    
     <!-- START DATA -->
 <div >
+      
     <!-- FORM PENCARIAN -->
     <div> 
-      <form>
-          <input type="search" name="katakunci" placeholder="Masukkan kata kunci" aria-label="Search">
-          <button type="submit">Cari</button>
-      </form>
-    </div>
-   
+      <form class="form">
+         <h1>Data Santri</h1>
+    <div>
     <!-- TOMBOL TAMBAH DATA -->
     
     <div>
-      <a href='beranda/form'>+ Tambah Data</a>
+      <button class="aksi-tambah"><a class="aksi-tambah" href='beranda/form'>Tambah Data</a></button>
+      <button class="aksi-logout"><a class="aksi-logout" href="/logout">Logout</a></button> 
+    </form>
     </div>
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>No.</th>
                 <th>Id Yayasan</th>
-                <th>Nama</th>
+                <th class="nama">Nama</th>
                 <th>Kamar</th>
                 <th>Sekolah</th>
+                <th class="tombol"></th>
             </tr>
         </thead>
         <tbody>
@@ -42,15 +41,20 @@
             <tr>
                 <td>{{$santri->id}}</td>
                 <td>{{$santri->id_yayasan}}</td>
-                <td>{{$santri->nama}}</td>
+                <td class="nama">{{$santri->nama}}</td>
                 <td>{{$santri->kamar}}</td>
                 <td>{{$santri->sekolah}}</td>
                 <td>
-                    <a href='beranda/{{$santri->id}}/edit'>Edit</a>
+                    {{-- <button><a href='beranda/{{$santri->id}}/edit'>Edit</a></button> --}}
+                    <form action="beranda/{{$santri->id}}/edit" method="GET">
+                        @csrf
+                        @method('GET')
+                        <button class="aksi-edit" type="sumbit" name="submit">Edit</button>
+                    </form>
                     <form onsubmit="return confirm('yakinkah anda mau menghapus data ini?')" action="beranda/{{$santri->id}}/delete" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="sumbit" name="submit">Hapus</button>
+                        <button class="aksi-hapus" type="sumbit" name="submit">Hapus</button>
                     </form>
                     {{-- <a href='beranda/{{$santri->id}}/delete'>Hapus</a> --}}
                 </td>

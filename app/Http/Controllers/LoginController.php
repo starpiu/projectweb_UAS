@@ -10,10 +10,10 @@ use App\Models\User;
 
 class LoginController extends Controller
 {
-    function index()
-    {
-        return view('login.login');
-    }
+    // function index()
+    // {
+    //     return view('login.login');
+    // }
     function awal()
     {
         return view('login.login');

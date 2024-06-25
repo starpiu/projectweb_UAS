@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#538392 0%, #B3E2A7 100% );
+}
+
+h1,h5{
+    text-align: center;
+}
+
+/* table, th, tr{
+    padding: 0;
+} */
+.form {
+    color: aliceblue;
+    width: 900px;
+    border-radius: 15px;
+    padding: 50px 50px;
+    backdrop-filter: blur(30px);
+    background-color: #80B9AD;
+}
+table{
+    text-align: center;
+    width: 800px;
+    max-height: 600px;
+    background-color: #538392;
+    border-radius: 15px;
+}
+.nama{
+    text-align: left;
+}
+thead th{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #6295A2;
+}
+table, td{
+    border-collapse: collapse;
+    padding: 3px;   
+}
+table, tr, th{
+    border-collapse: collapse;
+    padding: 10px;   
+}
+/* button{
+    background-color: aliceblue;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    display: flex;
+} */
+.aksi-edit, .aksi-hapus{
+    margin-right: 5px;
+}
+.aksi-edit{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 3px 5px;
+    cursor: pointer;
+    border-radius: 3px 
+}
+.aksi-hapus{
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 3px 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.aksi-tambah{
+    background-color: #B3E2A7 ;
+    color: white;
+    border: none;
+    padding: 3px 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    text-decoration: none;
+}
+.aksi-logout{
+    background-color: #d48e64 ;
+    color: white;
+    border: none;
+    padding: 3px 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    text-decoration: none;
+}

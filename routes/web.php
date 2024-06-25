@@ -11,12 +11,11 @@ Route::get('/', function () {
 });
 // Route::get('/login',[LoginController::class,'index'])->name('login');
 
-// Route::middleware('guest')->group(function(){
 Route::get('/login',[LoginController::class,'awal'])->name('login');
-Route::post('/login',[LoginController::class,'oke']); //});
+Route::post('/login',[LoginController::class,'oke']);
 Route::get('/logout', [LoginController::class, 'destroy'])->middleware('auth');
 
-// Route::prefix('/tasks')->middleware('auth')->group(function() {
+// Route::prefix('/beranda')->middleware('auth')->group(function() {
 Route::get('/beranda',[BerandaController::class,'index']);
 Route::get('/beranda/form',[FormController::class,'create']);
 Route::post('/beranda',[FormController::class,'store']);
